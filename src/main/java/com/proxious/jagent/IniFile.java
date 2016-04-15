@@ -57,6 +57,10 @@ public class IniFile {
 		return _entries.containsKey(section);
 	}
 
+	public Map<String, String> getSection(String section) {
+		return _entries.get(section);
+	}
+
 	public String getString(String section, String key) {
 		Map<String, String> kv = _entries.get(section);
 

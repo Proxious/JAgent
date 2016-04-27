@@ -161,7 +161,7 @@ public class Main {
 
                                 if (parameters.containsKey("command")) {
                                     if (commands.containsKey(parameters.get("command"))) {
-                                        Process p = Runtime.getRuntime().exec(config.getString("commands", parameters.get("command")) + " " + params);
+                                        Process p = Runtime.getRuntime().exec(config.getString("commands", parameters.get("command")).replace("~", System.getProperty("user.home")) + " " + params);
                                         BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
                                         String s;
 
